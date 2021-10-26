@@ -7,8 +7,6 @@ import java.util.Scanner;
 /   (and to solve the MathEvaluator 'kata' on CodeWars). I am sure that there are better ways of solving this problem using data structures, and may re-visit this  /   code when I have more experience of data structures.
 */
 
-
-
 public class ExpressionEvaluator {
 	public static void main(String[] args) {
 		
