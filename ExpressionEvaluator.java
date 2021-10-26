@@ -70,7 +70,7 @@ public class ExpressionEvaluator {
 		simpleExpression = simpleExpression.replaceAll("--", "+");
 		simpleExpression = simpleExpression.replaceAll("\\+-", "-");
 		
-		String partiallyEvalulated = simpleExpression;
+		String partiallyEvaluated = simpleExpression;
 		
 		// evalulate / or * recursively until no longer present then evaluate + - recursively until no longer present then return answer
 		if (simpleExpression.indexOf("/") != -1) {
@@ -95,7 +95,7 @@ public class ExpressionEvaluator {
 				firstPart = beforeOperation.substring(0, beforeOperation.lastIndexOf(operands[0]));
 			}
 			String lastPart = simpleExpression.substring(div+1 + operands[1].length());
-			partiallyEvalated = firstPart + result.toString() + lastPart;
+			partiallyEvaluated = firstPart + result.toString() + lastPart;
 			
 			return evaluate(partiallyEvaluated);
 		}
@@ -123,8 +123,8 @@ public class ExpressionEvaluator {
 			return evaluate(partiallyEvaluated);
 		}
 		
-		else if (simpleExpression.indexOf("-") != -1 && simpleExpression.indexOf("-") != 0) {
-			int div = simpleExpression.indexOf("-");
+		else if (simpleExpression.indexOf("-") != -1 && simpleExpression.lastIndexOf("-") != 0) {
+			int div = simpleExpression.lastIndexOf("-");
 			String beforeOperation = simpleExpression.substring(0, div);
 			String afterOperation = simpleExpression.substring(div+1);
 			Scanner before = new Scanner(beforeOperation);
